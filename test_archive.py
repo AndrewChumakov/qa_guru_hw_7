@@ -19,7 +19,7 @@ def test_pdf_file():
 def test_csv_file():
     with zipfile.ZipFile(f"{FILE}/archive.zip") as zip_file:
         with zip_file.open("test_csv.csv") as csv_file:
-            content = csv_file.read().decode('utf-8-sig')
+            content = csv_file.read().decode("utf-8-sig")
             csvreader = list(csv.reader(content.splitlines()))
             row = csvreader[1]
             assert row[0] == "Tset"
